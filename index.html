@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VIVID — прайс и запись</title>
+<meta property="og:title" content="VIVID — окрашивание волос · Одеса">
+<meta property="og:description" content="Прайс и онлайн-запись в Telegram">
+<meta property="og:image" content="photo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 28px 14px 40px;
+    color: #fff;
+  }
+
+  /* фоновое фото с блюром */
+  .bg {
+    position: fixed; inset: 0; z-index: -2;
+    background: url(photo.jpg) center 20% / cover no-repeat;
+    filter: blur(18px) brightness(.55) saturate(1.05);
+    transform: scale(1.12);
+  }
+  .tint {
+    position: fixed; inset: 0; z-index: -1;
+    background: linear-gradient(180deg, rgba(22,15,10,.20), rgba(22,15,10,.55));
+  }
+
+  .card {
+    width: 100%;
+    max-width: 440px;
+    background: rgba(26,19,14,.62);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,.14);
+    border-radius: 24px;
+    padding: 22px 20px 24px;
+    box-shadow: 0 18px 50px rgba(0,0,0,.45);
+  }
+
+  .cover {
+    width: 100%; height: 170px;
+    object-fit: cover; object-position: center 30%;
+    border-radius: 16px;
+    margin-bottom: 18px;
+  }
+
+  h1 {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 30px; font-weight: 700;
+    text-align: center; letter-spacing: .22em;
+    text-indent: .22em;
+  }
+  .sub {
+    text-align: center;
+    font-size: 12px; font-weight: 700;
+    letter-spacing: .08em;
+    color: #e9cf9f;
+    text-transform: uppercase;
+    margin: 6px 0 2px;
+  }
+  .addr {
+    text-align: center;
+    font-size: 12px; font-weight: 600;
+    color: rgba(255,255,255,.75);
+    margin-bottom: 16px;
+  }
+
+  .divider {
+    border: none;
+    border-top: 1px solid rgba(255,255,255,.14);
+    margin: 14px 0;
+  }
+  .section-title {
+    font-size: 13px; font-weight: 800;
+    letter-spacing: .06em;
+    color: #e9cf9f;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .service {
+    display: flex; align-items: baseline; gap: 10px;
+    padding: 7px 0;
+    border-bottom: 1px dashed rgba(255,255,255,.12);
+  }
+  .service:last-child { border-bottom: none; }
+  .service .name { font-size: 14px; font-weight: 700; flex: 1; }
+  .service .price {
+    font-size: 12px; font-weight: 600;
+    color: #e9cf9f; white-space: nowrap;
+  }
+
+  .slots {
+    text-align: center;
+    font-size: 13px; font-weight: 700;
+    color: rgba(255,255,255,.85);
+    margin: 4px 0 14px;
+  }
+
+  .btn {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    background: linear-gradient(135deg, #f2dcab, #d8ab6e);
+    color: #2b1e10;
+    font-size: 16px; font-weight: 800;
+    padding: 15px 10px;
+    border-radius: 15px;
+    box-shadow: 0 8px 24px rgba(216,171,110,.35);
+    transition: transform .15s ease;
+  }
+  .btn:active { transform: scale(.97); }
+  .btn-hint {
+    text-align: center;
+    font-size: 11px; font-weight: 600;
+    color: rgba(255,255,255,.6);
+    margin-top: 8px;
+  }
+
+  .links {
+    display: flex; justify-content: center; gap: 18px;
+    margin-top: 16px;
+  }
+  .links a {
+    color: #e9cf9f;
+    font-size: 13px; font-weight: 700;
+    text-decoration: none;
+  }
+</style>
+</head>
+<body>
+  <div class="bg"></div>
+  <div class="tint"></div>
+
+  <main class="card">
+    <img class="cover" src="photo.jpg" alt="Работа мастера — окрашивание волос">
+
+    <h1>VIVID</h1>
+    <div class="sub">Окрашивание волос · Одеса</div>
+    <div class="addr">📍 вул. Каманіна 16а</div>
+
+    <a class="btn" href="https://t.me/ReceptionBeauty_bot?start=book">📲 Записаться в Telegram</a>
+    <div class="btn-hint">запись онлайн — выбери услугу, день и время</div>
+
+    <hr class="divider">
+
+    <div class="section-title">💰 Услуги и цены</div>
+    <div class="service"><span class="name">Тонування — фарбування (тон в тон)</span><span class="price">2500–3500 грн</span></div>
+    <div class="service"><span class="name">Фарбування коріння</span><span class="price">1500–1700 грн</span></div>
+    <div class="service"><span class="name">AirTouch</span><span class="price">4500–6000 грн</span></div>
+    <div class="service"><span class="name">Рельєф</span><span class="price">4000–5000 грн</span></div>
+    <div class="service"><span class="name">Шатуш</span><span class="price">4000–5000 грн</span></div>
+    <div class="service"><span class="name">Контурінг</span><span class="price">3000–3500 грн</span></div>
+    <div class="service"><span class="name">Вихід в натуральний</span><span class="price">3000–3500 грн</span></div>
+    <div class="service"><span class="name">Тотал блонд</span><span class="price">3500–4500 грн</span></div>
+    <div class="service"><span class="name">Тотал блонд (1 см коріння і тонування)</span><span class="price">4000–5000 грн</span></div>
+    <div class="service"><span class="name">Вихід з чорного</span><span class="price">6000–8000 грн</span></div>
+    <div class="service"><span class="name">Реконструкція</span><span class="price">1200–1700 грн</span></div>
+
+    <hr class="divider">
+
+    <div class="slots">🕐 Начало процедур: 10:00 / 15:00</div>
+
+    <a class="btn" href="https://t.me/ReceptionBeauty_bot?start=book">📲 Записаться</a>
+
+    <div class="links">
+      <a href="https://t.me/aNast710">Telegram мастера</a>
+      <a href="https://instagram.com/anastasiia_hair.od">Instagram</a>
+    </div>
+  </main>
+</body>
+</html>
