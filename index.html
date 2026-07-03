@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>VIVID — прайс и запись</title>
 <meta property="og:title" content="VIVID — окрашивание волос · Одеса">
-<meta property="og:description" content="Прайс и онлайн-запись в Telegram">
+<meta property="og:description" content="Прайс і онлайн-запис у Telegram">
 <meta property="og:image" content="photo.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
@@ -21,35 +21,29 @@
     color: #fff;
   }
 
-  /* фоновое фото с блюром */
+  /* фоновое фото на весь экран с лёгким блюром */
   .bg {
     position: fixed; inset: 0; z-index: -2;
-    background: url(photo.jpg) center 20% / cover no-repeat;
-    filter: blur(18px) brightness(.55) saturate(1.05);
-    transform: scale(1.12);
+    background: url(photo.jpg) center 25% / cover no-repeat;
+    filter: blur(6px) brightness(.82) saturate(1.05);
+    transform: scale(1.05);
   }
   .tint {
     position: fixed; inset: 0; z-index: -1;
-    background: linear-gradient(180deg, rgba(22,15,10,.20), rgba(22,15,10,.55));
+    background: linear-gradient(180deg, rgba(22,15,10,.08), rgba(22,15,10,.38));
   }
 
   .card {
     width: 100%;
     max-width: 440px;
-    background: rgba(26,19,14,.62);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    align-self: center;
+    background: rgba(24,17,12,.55);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     border: 1px solid rgba(255,255,255,.14);
     border-radius: 24px;
-    padding: 22px 20px 24px;
+    padding: 26px 20px 24px;
     box-shadow: 0 18px 50px rgba(0,0,0,.45);
-  }
-
-  .cover {
-    width: 100%; height: 170px;
-    object-fit: cover; object-position: center 30%;
-    border-radius: 16px;
-    margin-bottom: 18px;
   }
 
   h1 {
@@ -87,23 +81,25 @@
   }
 
   .service {
-    display: flex; align-items: baseline; gap: 10px;
+    display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 10px;
     padding: 7px 0;
     border-bottom: 1px dashed rgba(255,255,255,.12);
+    cursor: pointer;
   }
-  .service:last-child { border-bottom: none; }
+  .service:last-of-type { border-bottom: none; }
   .service .name { font-size: 14px; font-weight: 700; flex: 1; }
   .service .price {
     font-size: 12px; font-weight: 600;
     color: #e9cf9f; white-space: nowrap;
   }
-
-  .slots {
-    text-align: center;
-    font-size: 13px; font-weight: 700;
-    color: rgba(255,255,255,.85);
-    margin: 4px 0 14px;
+  .service .dur {
+    display: none;
+    width: 100%;
+    font-size: 11px; font-weight: 600;
+    color: rgba(255,255,255,.6);
+    padding-top: 2px;
   }
+  .service.open .dur { display: block; }
 
   .btn {
     display: block;
@@ -141,33 +137,30 @@
   <div class="tint"></div>
 
   <main class="card">
-    <img class="cover" src="photo.jpg" alt="Работа мастера — окрашивание волос">
-
     <h1>VIVID</h1>
     <div class="sub">Окрашивание волос · Одеса</div>
     <div class="addr">📍 вул. Каманіна 16а</div>
 
     <a class="btn" href="https://t.me/ReceptionBeauty_bot?start=book">📲 Записаться в Telegram</a>
-    <div class="btn-hint">запись онлайн — выбери услугу, день и время</div>
+    <div class="btn-hint">запис онлайн — обери послугу, день і час</div>
 
     <hr class="divider">
 
-    <div class="section-title">💰 Услуги и цены</div>
-    <div class="service"><span class="name">Тонування — фарбування (тон в тон)</span><span class="price">2500–3500 грн</span></div>
-    <div class="service"><span class="name">Фарбування коріння</span><span class="price">1500–1700 грн</span></div>
-    <div class="service"><span class="name">AirTouch</span><span class="price">4500–6000 грн</span></div>
-    <div class="service"><span class="name">Рельєф</span><span class="price">4000–5000 грн</span></div>
-    <div class="service"><span class="name">Шатуш</span><span class="price">4000–5000 грн</span></div>
-    <div class="service"><span class="name">Контурінг</span><span class="price">3000–3500 грн</span></div>
-    <div class="service"><span class="name">Вихід в натуральний</span><span class="price">3000–3500 грн</span></div>
-    <div class="service"><span class="name">Тотал блонд</span><span class="price">3500–4500 грн</span></div>
-    <div class="service"><span class="name">Тотал блонд (1 см коріння і тонування)</span><span class="price">4000–5000 грн</span></div>
-    <div class="service"><span class="name">Вихід з чорного</span><span class="price">6000–8000 грн</span></div>
-    <div class="service"><span class="name">Реконструкція</span><span class="price">1200–1700 грн</span></div>
+    <div class="section-title">💇‍♀️ Фарбування</div>
+    <div class="service" onclick="this.classList.toggle('open')"><span class="name">Тонування — фарбування (тон в тон)</span><span class="price">2500–3500 грн</span><span class="dur">⏱ ~2–3 години</span></div>
+    <div class="service" onclick="this.classList.toggle('open')"><span class="name">Фарбування коріння</span><span class="price">1500–1700 грн</span><span class="dur">⏱ ~2–3 години</span></div>
+    <div class="service" onclick="this.classList.toggle('open')"><span class="name">Вихід в натуральний</span><span class="price">3000–3500 грн</span><span class="dur">⏱ ~3–4 години</span></div>
+    <div class="service" onclick="this.classList.toggle('open')"><span class="name">Тотал блонд (довге коріння)</span><span class="price">3500–4500 грн</span><span class="dur">⏱ ~4–6 годин</span></div>
+    <div class="service" onclick="this.classList.toggle('open')"><span class="name">Тотал блонд (1 см коріння і тонування)</span><span class="price">4000–5000 грн</span><span class="dur">⏱ ~3–4 години</span></div>
+    <div class="service" onclick="this.classList.toggle('open')"><span class="name">Вихід з чорного</span><span class="price">6000–8000 грн</span><span class="dur">⏱ ~8 годин</span></div>
+    <div class="service" onclick="this.classList.toggle('open')"><span class="name">Реконструкція</span><span class="price">1200–1700 грн</span><span class="dur">⏱ ~2 години</span></div>
+    <div class="section-title" style="margin-top:14px">✨ Складна техніка</div>
+    <div class="service" onclick="this.classList.toggle('open')"><span class="name">AirTouch</span><span class="price">4500–6000 грн</span><span class="dur">⏱ ~8 годин</span></div>
+    <div class="service" onclick="this.classList.toggle('open')"><span class="name">Рельєф</span><span class="price">4000–5000 грн</span><span class="dur">⏱ ~5–6 годин</span></div>
+    <div class="service" onclick="this.classList.toggle('open')"><span class="name">Шатуш</span><span class="price">4000–5000 грн</span><span class="dur">⏱ ~5–6 годин</span></div>
+    <div class="service" onclick="this.classList.toggle('open')"><span class="name">Контурінг</span><span class="price">3000–3500 грн</span><span class="dur">⏱ ~4–5 годин</span></div>
 
     <hr class="divider">
-
-    <div class="slots">🕐 Начало процедур: 10:00 / 15:00</div>
 
     <a class="btn" href="https://t.me/ReceptionBeauty_bot?start=book">📲 Записаться</a>
 
